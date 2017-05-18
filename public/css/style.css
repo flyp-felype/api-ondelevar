@@ -1,0 +1,50 @@
+.corpo
+{
+    background: url('../images/background-garagem2.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1,h5{
+    text-shadow: 1px 1px #000;
+}
+
+.back{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    padding-top:10rem;
+}
+input{
+    background-color: #FFF !important;
+    box-shadow: 2px 2px #fff;
+    padding-left: 10px !important
+}
+
+.center-align-box {
+    top: 50%;
+    left: 50%;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #006064;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #006064;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #006064;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #006064;
+}
+
+footer{
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+        width: 100%;
+}
