@@ -13,6 +13,12 @@ class CreateOficinahasespecialidadeTable extends Migration
      */
     public function up()
     {
+        Schema::create('oficina_especialidades', function (Blueprint $table) {
+            $table->integer('oficina_id')->unsigned();
+            $table->integer('especialidades_id')->unsigned();
+            $table->foreign('oficina_id')->references('id')->on('oficina');
+            $table->foreign('especialidades_id')->references('idespecialidades')->on('especialidades');
+        });
         //
     }
 

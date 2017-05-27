@@ -14,6 +14,19 @@ class CreateOficinaTable extends Migration
     public function up()
     {
         //
+         Schema::create('oficina', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('nome');
+                $table->string('endereco');
+                $table->string('cidade');
+                $table->char('uf',2);
+                $table->string('telefone',12)->nullable();
+                $table->string('telefone2',12)->nullable();
+                $table->string('celular',13)->nullable();
+                $table->string('longitude');
+                $table->string('latitude');
+                $table->timestamps();
+          });
     }
 
     /**

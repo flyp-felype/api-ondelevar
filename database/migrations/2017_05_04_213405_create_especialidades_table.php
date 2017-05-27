@@ -14,6 +14,12 @@ class CreateEspecialidadesTable extends Migration
     public function up()
     {
         //
+        Schema::create('especialidades', function (Blueprint $table) {
+            $table->increments('idespecialidades');
+            $table->string('descricao');
+             $table->foreign('idtipo_tipo')->references('idtipos')->on('tipos');
+             $table->timestamps();
+        });
     }
 
     /**

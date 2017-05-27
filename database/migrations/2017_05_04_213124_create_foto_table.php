@@ -14,6 +14,15 @@ class CreateFotoTable extends Migration
     public function up()
     {
         //
+         Schema::create('foto', function (Blueprint $table) {
+                $table->increments('idfotto');
+                $table->string('nome');
+                $table->string('pasta');
+                $table->string('status');
+                $table->integer('oficina_id')->unsigned();
+                $table->foreign('oficina_id')->references('id')->on('oficina');
+                $table->timestamps();
+          });
     }
 
     /**
