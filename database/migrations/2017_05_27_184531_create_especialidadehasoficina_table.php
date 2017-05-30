@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOficinahasespecialidadeTable extends Migration
+class CreateEspecialidadehasoficinaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateOficinahasespecialidadeTable extends Migration
      */
     public function up()
     {
-        Schema::create('oficina_especialidades', function (Blueprint $table) {
+        //
+              Schema::create('oficina_especialidades', function (Blueprint $table) {
             $table->integer('oficina_id')->unsigned();
             $table->integer('especialidades_id')->unsigned();
             $table->foreign('oficina_id')->references('id')->on('oficina');
             $table->foreign('especialidades_id')->references('idespecialidades')->on('especialidades');
         });
-        //
     }
 
     /**

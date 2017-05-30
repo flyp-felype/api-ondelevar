@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('/busca', function() {
     return view('busca');
 });
+
+Route::resource('oficina', 'OficinaController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
