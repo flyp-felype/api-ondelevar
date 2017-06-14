@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\oficina;
+use App\especialidades;
 use Illuminate\Http\Request;
 
-class OficinaController extends Controller
+class EspecialidadesController extends Controller
 {
 
   public function __construct()
@@ -21,7 +21,7 @@ class OficinaController extends Controller
     public function index()
     {
         //
-        return view('oficina/index');
+        return view("especialidades/index");
     }
 
     /**
@@ -32,7 +32,6 @@ class OficinaController extends Controller
     public function create()
     {
         //
-        return view('oficina/cadastro');
     }
 
     /**
@@ -49,10 +48,10 @@ class OficinaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\oficina  $oficina
+     * @param  \App\especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function show(oficina $oficina)
+    public function show(especialidades $especialidades)
     {
         //
     }
@@ -60,10 +59,10 @@ class OficinaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\oficina  $oficina
+     * @param  \App\especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function edit(oficina $oficina)
+    public function edit(especialidades $especialidades)
     {
         //
     }
@@ -72,10 +71,10 @@ class OficinaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\oficina  $oficina
+     * @param  \App\especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, oficina $oficina)
+    public function update(Request $request, especialidades $especialidades)
     {
         //
     }
@@ -83,10 +82,10 @@ class OficinaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\oficina  $oficina
+     * @param  \App\especialidades  $especialidades
      * @return \Illuminate\Http\Response
      */
-    public function destroy(oficina $oficina)
+    public function destroy(especialidades $especialidades)
     {
         //
     }

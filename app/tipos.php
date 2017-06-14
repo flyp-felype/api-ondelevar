@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class tipo extends Model
+class tipos extends Model
 {
     //
 
-    protected $primaryKey = "idtipo";
+
+        protected $primaryKey = "idtipo";
 }

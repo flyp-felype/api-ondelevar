@@ -19,7 +19,10 @@ Route::get('/busca', function() {
     return view('busca');
 });
 
+
 Route::resource('oficina', 'OficinaController');
+Route::resource('tipo', 'TipoController');
+Route::resource('especialidades', 'EspecialidadesController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

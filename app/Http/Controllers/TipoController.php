@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\oficina;
+use App\tipos;
+
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class OficinaController extends Controller
+class TipoController extends Controller
 {
+
 
   public function __construct()
   {
@@ -20,8 +23,15 @@ class OficinaController extends Controller
      */
     public function index()
     {
+
+      $tipos = DB::table('tipos')
+      ->orderBy('descricao', 'ASC')
+      ->get();
+
+      return view("tipo/index", [
+        'tipo' => $tipos
+        ]);
         //
-        return view('oficina/index');
     }
 
     /**
@@ -32,7 +42,7 @@ class OficinaController extends Controller
     public function create()
     {
         //
-        return view('oficina/cadastro');
+        return view("tipo/create");
     }
 
     /**
@@ -44,15 +54,23 @@ class OficinaController extends Controller
     public function store(Request $request)
     {
         //
+
+        $tipo = new tipos;
+
+        $tipo->descricao = $request->descricao;
+
+        $tipo->save();
+
+        return redirect('tipo');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\oficina  $oficina
+     * @param  \App\tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function show(oficina $oficina)
+    public function show(tipo $tipo)
     {
         //
     }
@@ -60,10 +78,10 @@ class OficinaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\oficina  $oficina
+     * @param  \App\tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function edit(oficina $oficina)
+    public function edit(tipo $tipo)
     {
         //
     }
@@ -72,10 +90,10 @@ class OficinaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\oficina  $oficina
+     * @param  \App\tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, oficina $oficina)
+    public function update(Request $request, tipo $tipo)
     {
         //
     }
@@ -83,10 +101,10 @@ class OficinaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\oficina  $oficina
+     * @param  \App\tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(oficina $oficina)
+    public function destroy(tipo $tipo)
     {
         //
     }
