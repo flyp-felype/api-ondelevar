@@ -54,14 +54,24 @@ class TipoController extends Controller
     public function store(Request $request)
     {
         //
+        try{
+            $tipo = new tipos;
 
-        $tipo = new tipos;
+            $tipo->descricao = $request->descricao;
 
-        $tipo->descricao = $request->descricao;
+            $tipo->save();
 
-        $tipo->save();
-
-        return redirect('tipo');
+            return response()->json([
+                                'nome' => $request->descricao,
+                                'success' => 'Sucesso'
+                                ]);
+        }
+        catch(Exception $e){
+            return response()->json([
+                'errol' => $e
+                ]);
+        }
+       
     }
 
     /**
@@ -104,8 +114,22 @@ class TipoController extends Controller
      * @param  \App\tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tipo $tipo)
+    public function destroy($tipo)
     {
         //
+         try{
+
+          DB::table('tipos')->where('idtipos', '=', $tipo)->delete();
+
+            return response()->json([
+                                'success' => $tipo
+                                ]);
+        }
+        catch(Exception $e){
+            return response()->json([
+                'errol' => $e
+                ]);
+        }
+      
     }
 }

@@ -23,8 +23,10 @@ class CreateOficinaTable extends Migration
                 $table->string('telefone',12)->nullable();
                 $table->string('telefone2',12)->nullable();
                 $table->string('celular',13)->nullable();
+                $table->string('cep',10);
                 $table->string('longitude');
                 $table->string('latitude');
+                $table->string('cep',10);
                 $table->timestamps();
           });
     }

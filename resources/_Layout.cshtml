@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title ng-bind="models.helloAngular"></title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        @RenderSection("scripts", required: false)
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body >
+  
+       <div class="load hidden">
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+
+            </div>
+            
+    <nav class="light-blue darken-4">
+        <div class="row container-fluid ">
+            <div class="nav-wrapper col s12 ">
+                <a href="~/" class=" brand-logo"><img src="http://www.grupozema.com.br/site/Content/images/logo-zema.png"></a>
+                <ul class="right hide-on-med-and-down black-text">
+                    <li>
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li>@Html.ActionLink("Importar Arquivos", "ImportaEstornos", "ImportaArquivo")</li>
+                    <li>@Html.ActionLink("Crédito", "Index", "Credito")</li>
+                    <li>@Html.ActionLink("Renegociação", "Index", "Renegociacao")</li>
+                    <li>@Html.ActionLink("Mensalidade", "Mensalidade", "ImportaArquivo")</li>
+                    <li>@Html.ActionLink("Relatórios", "relatorio", "Home")</li>
+                    <li>@Html.ActionLink("Gerar Arquivos", "consultar", "GerarArquivos")</li>
+                    
+
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+@if (Session["SEG_USER_CPF"] != "")
+{
+    
+    <p class="z-depth-2 right-align" style="padding-right:10px">
+        @Session["SEG_USER_NOME"]  |  <a href="">Sair </a>
+    </p>
+}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="msg hidden">
+
+            </div>
+
+            @RenderBody()
+
+            <div class="msg hidden">
+
+            </div>
+        </div>
+
+        <hr />
+
+        <footer>
+<p>&copy; @DateTime.Now.Year - Dev Team</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/materialize")
+
+</body>
+</html>

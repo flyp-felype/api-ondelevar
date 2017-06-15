@@ -44,6 +44,32 @@ class OficinaController extends Controller
     public function store(Request $request)
     {
         //
+          try{
+            $oficina = new oficina;
+
+            $oficina->nome = $request->nome;
+            $oficina->endereco = $request->endereco;
+            $oficina->cidade = $request->cidade;
+            $oficina->uf = $request->uf;
+            $oficina->telefone = $request->telefone1;
+            $oficina->telefone2 = $request->telefone2;
+            $oficina->celular = $request->celular;
+            $oficina->descricao = $request->descricao;
+
+            $oficina->save();
+
+            return response()->json([
+                                'nome' => $request->descricao,
+                                'success' => 'Sucesso'
+                                ]);
+        }
+        catch(Exception $e){
+            return response()->json([
+                'errol' => $e
+                ]);
+        }
+
+
     }
 
     /**

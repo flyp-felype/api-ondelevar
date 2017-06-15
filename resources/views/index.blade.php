@@ -18,7 +18,7 @@
         <div class="container">
           <div class="row">
             <div class="col s12">
-            <h1 class="white-text center-align">Onde Levar?</h1>
+            <h1 class="white-text center-align">MechAdvisor</h1>
             <h5 class="white-text center-align">Achamos as melhores oficinas para atender o seu problema!</h5>
 
             <div class="row">

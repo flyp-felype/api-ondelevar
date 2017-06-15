@@ -19,6 +19,8 @@ Route::get('/busca', function() {
     return view('busca');
 });
 
+Route::get('tipo/delete/{id}', "TipoController@destroy");
+
 
 Route::resource('oficina', 'OficinaController');
 Route::resource('tipo', 'TipoController');
