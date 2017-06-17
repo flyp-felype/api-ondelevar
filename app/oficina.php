@@ -11,4 +11,5 @@ class oficina extends Model
         return $this->belongsToMany('App\especialidades')->withTimestamps();
     }
     protected $primaryKey = "id";
+     protected $table = 'oficina';
 }

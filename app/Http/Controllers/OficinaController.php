@@ -32,7 +32,7 @@ class OficinaController extends Controller
     public function create()
     {
         //
-        return view('oficina/cadastro');
+        return view('oficina/create');
     }
 
     /**
@@ -54,12 +54,17 @@ class OficinaController extends Controller
             $oficina->telefone = $request->telefone1;
             $oficina->telefone2 = $request->telefone2;
             $oficina->celular = $request->celular;
-            $oficina->descricao = $request->descricao;
+            $oficina->uf = $request->uf;
+            $oficina->longitude = $request->longitude;
+            $oficina->latitude = $request->latitude;
+            $oficina->cep = $request->cep;
+            $oficina->idusers = 1;
 
             $oficina->save();
 
             return response()->json([
-                                'nome' => $request->descricao,
+                                'nome'    => $oficina->nome,
+                                'id'      => $oficina->id,
                                 'success' => 'Sucesso'
                                 ]);
         }

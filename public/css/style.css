@@ -68,3 +68,11 @@ footer{
  top:35%;
  left: 45%
 }
+
+.borderbottom{
+  border-bottom: 1px solid #ccc;
+}
+.borderright
+{
+  border-right: 1px solid #ccc;
+}

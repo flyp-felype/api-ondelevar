@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  
+
     $('select').material_select();
     $('.datepicker').pickadate({
         monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
@@ -55,7 +55,6 @@ function sendajax(method, dataSend, url) {
                     reject(JSON.parse(xhr.responseText));
                 }
                 else {
-                console.log("erro");
                 reject(JSON.parse(xhr.responseText));
                 Endload();
             }
