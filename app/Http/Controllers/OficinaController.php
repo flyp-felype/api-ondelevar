@@ -77,6 +77,7 @@ class OficinaController extends Controller
 
     }
 
+
     /**
      * Display the specified resource.
      *

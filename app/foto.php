@@ -9,4 +9,5 @@ class foto extends Model
     //
 
     protected $primaryKey = "idfoto";
+     protected $table = 'foto';
 }

@@ -35,17 +35,18 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12 m6">
+        <div class="input-field col s12 m12">
           <input id="endereco" type="text" name="endereco" class="validate">
           <label for="endereco">Endereço</label>
         </div>
+
+      </div>
+      <div class="row">
         <div class="input-field col s12 m6">
           <input id="cidade" type="text" name="cidade" class="validate">
           <label for="cidade">Cidade</label>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s12 m6">
           <select name="uf" id="uf">
             <option value="">Selecione...</option>
             <option value="AC">AC</option>
@@ -114,27 +115,44 @@
       </div>
     </form>
 
-    <form id="formstep2" class="hidden">
+    <form id="formstep2"  class="hidden">
 
       <div class="file-field input-field">
+
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+        <input type="hidden" name="id" id="id">
         <div class="btn">
-          <span>File</span>
-          <input type="file" multiple>
+          <span>Imagem Oficina</span>
+          <input type="file"  name="file" multiple >
         </div>
         <div class="file-path-wrapper">
-          <input class="file-path validate" type="text" placeholder="Upload one or more files">
+          <input class="file-path validate" type="text" placeholder="Insira uma foto significativa da sua oficina">
         </div>
       </div>
-
+<br>
       <div class="col s12">
         <div class="row">
-          <button class="btn waves-effect waves-light indigo darken-4" type="submit">Salvar
+          <button class="btn waves-effect waves-light indigo darken-4" type="button" onclick="enviarFoto()">Enviar
             <i class="material-icons right">send</i>
           </button>
         </div>
 
       </div>
       <form>
+
+<br><br>
+        <div class="row">
+          <button class="btn waves-effect waves-light right green darken-4" type="button" onclick="finalizar()">Finalizar
+            <i class="material-icons right">thumb_up</i>
+          </button>
+        </div>
+
+        <div class="row">
+          <div id="resultado">
+
+          </div>
+        </div>
       </div>
 
 

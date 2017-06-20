@@ -21,10 +21,10 @@ Route::get('/busca', function() {
 
 Route::get('tipo/delete/{id}', "TipoController@destroy");
 
-
 Route::resource('oficina', 'OficinaController');
 Route::resource('tipo', 'TipoController');
 Route::resource('especialidades', 'EspecialidadesController');
+Route::resource('foto', 'FotoController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
