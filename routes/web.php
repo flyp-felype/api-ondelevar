@@ -20,6 +20,7 @@ Route::get('/busca', function() {
 });
 
 Route::get('tipo/delete/{id}', "TipoController@destroy");
+Route::get('oficina/delete/{id}', "OficinaController@destroy");
 
 Route::resource('oficina', 'OficinaController');
 Route::resource('tipo', 'TipoController');

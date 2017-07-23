@@ -3,7 +3,7 @@
 @section('content')
 
   <div class="row">
-    <h4 class="">Cadastro de Oficina</h4>
+    <h4 class="">Editar Oficina {{$oficina->nome}}</h4>
   </div>
 
   <div class="divider"></div>
@@ -23,32 +23,33 @@
     <form class="col s12" id="formOficina">
       <div class="row">
         <div class="input-field col s12 m6">
-          <input id="nome" type="text" class="validate" name="nome" required>
+          <input id="nome" type="text" class="validate" name="nome"value="{{$oficina->nome}}"  required>
           <label for="nome">Nome da Oficina</label>
 
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="id" value="{{$oficina->nome}}">
         </div>
         <div class="input-field col s12 m6">
-          <input type="text" id="cep" name="cep" class="validate">
+          <input type="text" id="cep" name="cep" value="{{$oficina->cep}}" class="validate">
           <label for="cep">CEP</label>
 
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12 m12">
-          <input id="endereco" type="text" name="endereco" class="validate">
+          <input id="endereco" type="text" name="endereco" value="{{$oficina->endereco}}" class="validate">
           <label for="endereco">Endereço</label>
         </div>
 
       </div>
       <div class="row">
         <div class="input-field col s12 m6">
-          <input id="cidade" type="text" name="cidade" class="validate">
+          <input id="cidade" type="text" name="cidade" value="{{$oficina->cidade}}" class="validate">
           <label for="cidade">Cidade</label>
         </div>
         <div class="input-field col s12 m6">
           <select name="uf" id="uf">
-            <option value="">Selecione...</option>
+            <option value="{{$oficina->uf}}">{{$oficina->uf}}</option>
             <option value="AC">AC</option>
             <option value="AL">AL</option>
             <option value="AM">AM</option>
@@ -82,25 +83,28 @@
       </div>
       <div class="row">
         <div class="input-field col s12 m4">
-          <input id="telefone1" name="telefone1" type="text" class="validate">
+          <input id="telefone1" name="telefone1" value="{{$oficina->telefone}}"  type="text" class="validate">
           <label for="telefone1">Telefone</label>
         </div>
         <div class="input-field col s12 m4">
-          <input id="telefone2" type="text" name="telefone2" class="validate">
+          <input id="telefone2" type="text" name="telefone2" value="{{$oficina->telefone2}}"  class="validate">
           <label for="telefone2">Telefone 2</label>
         </div>
         <div class="input-field col s12 m4">
-          <input id="celular" type="text" name="celular" class="validate">
+          <input id="celular" type="text" name="celular" value="{{$oficina->celular}}"  class="validate">
           <label for="celular">Celular</label>
         </div>
       </div>
       <div class="row">
+
+      </div>
+      <div class="row">
         <div class="input-field col s12 m6">
-          <input id="longitude" name="longitude" type="text" class="validate">
+          <input id="longitude" name="longitude" type="text" class="validate" value="{{$oficina->longitude}}" >
           <label for="longitude">Longitude</label>
         </div>
         <div class="input-field col s12 m6">
-          <input id="latitude" type="text" name="latitude" class="validate">
+          <input id="latitude" type="text" name="latitude" class="validate" value="{{$oficina->latitude}}" >
           <label for="latitude">Latitude</label>
         </div>
       </div>

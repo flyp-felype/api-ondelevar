@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\oficina;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class OficinaController extends Controller
@@ -20,8 +21,14 @@ class OficinaController extends Controller
      */
     public function index()
     {
+      $oficinas = DB::table('oficina')
+      ->orderBy('nome', 'ASC')
+      ->get();
+
+      return view("oficina/index", [
+        'oficina' => $oficinas
+        ]);
         //
-        return view('oficina/index');
     }
 
     /**
@@ -98,6 +105,9 @@ class OficinaController extends Controller
     public function edit(oficina $oficina)
     {
         //
+        return view("oficina/edit", [
+          'oficina' => $oficina
+          ]);
     }
 
     /**
@@ -118,8 +128,23 @@ class OficinaController extends Controller
      * @param  \App\oficina  $oficina
      * @return \Illuminate\Http\Response
      */
-    public function destroy(oficina $oficina)
+    public function destroy($oficina)
     {
         //
+        //
+         try{
+
+          DB::table('foto')->where('oficina_id', '=', $oficina)->delete();
+          DB::table('oficina')->where('id', '=', $oficina)->delete();
+
+            return response()->json([
+                                'success' => $oficina
+                                ]);
+        }
+        catch(Exception $e){
+            return response()->json([
+                'errol' => $e
+                ]);
+        }
     }
 }
