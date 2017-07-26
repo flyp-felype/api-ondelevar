@@ -15,7 +15,7 @@ formularioTipo.addEventListener('submit', function(e) {
 
   var data = new FormData(dadosFormulario);
 
-     sendajax("POST", data, "/tipo")
+     sendajax("POST", data, "/admin/tipo")
         .then(sucesso => {
           descricao.value = "";
           var nome = sucesso.nome;

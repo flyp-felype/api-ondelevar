@@ -114,8 +114,8 @@
                 <a href="#!" class="white-text collapsible-header"><i class="material-icons white-text">business</i> Oficinas</a>
                 <div class="collapsible-body">
                   <ul class="blue-grey darken-3 white-text">
-                    <li><a href="#!" class="white-text">Ver Oficinas</a></li>
-                    <li><a href="{{ URL::asset('oficina/create') }}" class=" white-text">Nova Oficina</a></li>
+                    <li><a href="{{ URL::asset('admin/oficina') }}" class="white-text">Ver Oficinas</a></li>
+                    <li><a href="{{ URL::asset('admin/oficina/create') }}" class=" white-text">Nova Oficina</a></li>
                   </ul>
                 </div>
               </li>

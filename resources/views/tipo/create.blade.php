@@ -4,14 +4,14 @@
 
   <div class="row">
     <h4 class="">Cadastro Tipos de Oficina</h4>
-    <a href="{{URL::asset('tipo')}}"> <i class="material-icons">undo</i> Voltar</a>
+    <a href="{{URL::asset('admin/tipo')}}"> <i class="material-icons">undo</i> Voltar</a>
   </div>
-        
+
   <div class="divider"></div>
   <br>
 
   <div class="row">
-    
+
     <form action="#" method="post" id="tiposForm">
       <div class="row">
         <div class="input-field col s12">

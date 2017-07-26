@@ -11,7 +11,7 @@
   <br>
 
   <div class="row">
-    <a href="{{URL::asset('oficina/create')}}" class="waves-effect waves-light btn indigo darken-4"><i class="material-icons left">add</i>Nova Oficina</a>
+    <a href="{{URL::asset('/admin/oficina/create')}}" class="waves-effect waves-light btn indigo darken-4"><i class="material-icons left">add</i>Nova Oficina</a>
     <br>
 
     <table class="striped bordered responsive-table">
@@ -33,7 +33,7 @@
               <td>{{$oficinas->uf}}</td>
               <td>
                 <a href="#" onclick="DeleteOficina({{$oficinas->id}})" class="red-text"> <i class="material-icons">delete_forever</i></a>
-                <a href="/oficina/{{$oficinas->id}}/edit" class="blue-text"> <i class="material-icons">mode_edit</i></a>
+                <a href="/admin/oficina/{{$oficinas->id}}/edit" class="blue-text"> <i class="material-icons">mode_edit</i></a>
               </td>
             </tr>
           @endforeach

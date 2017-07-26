@@ -7,7 +7,7 @@ if(formOficina != null){
         let dadosFormulario = document.querySelector("#formOficina");
         var data = new FormData(dadosFormulario);
 
-        sendajax("POST", data, "/oficina")
+        sendajax("POST", data, "/admin/oficina")
         .then(sucesso => {
 
           retornoDaOficina();
@@ -65,7 +65,7 @@ function enviarFoto(){
 console.log(formFoto);
   let data = new FormData(formFoto);
 
-  sendajax("POST", data, "/foto")
+  sendajax("POST", data, "/admin/foto")
   .then(sucesso => {
         MensagemSucesso("Foto inserida com sucesso!");
         let resultado = document.querySelector("#resultado");
@@ -88,7 +88,7 @@ function finalizar(){
   load();
   MensagemSucesso("Cadastro Finalizado com sucesso!");
 
-  setTimeout(function(){ window.location="/oficina"; }, 2000);
+  setTimeout(function(){ window.location="/admin/oficina"; }, 2000);
 
 }
 

@@ -22,10 +22,11 @@ Route::get('/busca', function() {
 Route::get('tipo/delete/{id}', "TipoController@destroy");
 Route::get('oficina/delete/{id}', "OficinaController@destroy");
 
-Route::resource('oficina', 'OficinaController');
-Route::resource('tipo', 'TipoController');
-Route::resource('especialidades', 'EspecialidadesController');
-Route::resource('foto', 'FotoController');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
+Route::prefix('admin')->group(function () {
+  Auth::routes();
+  Route::resource('oficina', 'OficinaController');
+  Route::resource('tipo', 'TipoController');
+  Route::resource('especialidades', 'EspecialidadesController');
+  Route::resource('foto', 'FotoController');
+  Route::get('/home', 'HomeController@index');
+});
